@@ -3,11 +3,12 @@
 	"version": "0.0.1",
 	"description": "Rich syntax highlighting for .NET's Common Intermediate Language",
 	"displayName": "Common Intermediate Language",
-	"author": "AFatNiBBa",
+	"publisher": "AFatNiBBa",
 	"license": "MIT",
 	"main": "./dist/index.js",
 	"scripts": {
-		"build": "vite build"
+		"build": "vite build",
+		"vsix": "vsce package --no-dependencies"
 	},
 	"devDependencies": {
 		"vsce": "^1.87.0"

@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    // General
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "experimentalDecorators": true,
+    "noUncheckedSideEffectImports": true,
+    "noImplicitOverride": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitThis": true,
+    "strict": true,
+
+    // Extra
+    "isolatedModules": true
+  }
+}

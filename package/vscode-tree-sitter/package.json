@@ -1,0 +1,27 @@
+{
+  "name": "vscode-tree-sitter",
+  "version": "0.0.1",
+  "description": "Tree-sitter language highlighting library for VSCode",
+  "author": "AFatNiBBa",
+  "license": "ISC",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "scripts": {
+    "build": "vite build",
+    "save": "npm run build && npm publish"
+  },
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.58.9",
+    "@typescript/typescript6": "^6.0.2",
+    "unplugin-dts": "^1.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AFatNiBBa/vscode-tree-sitter.git"
+  },
+  "keywords": [
+    "vscode",
+    "extension",
+    "tree-sitter"
+  ]
+}

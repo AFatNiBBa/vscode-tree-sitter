@@ -1,0 +1,44 @@
+{
+	"name": "vscode-lang-cil",
+	"version": "0.0.1",
+	"description": "Rich syntax highlighting for .NET's Common Intermediate Language",
+	"displayName": "Common Intermediate Language",
+	"author": "AFatNiBBa",
+	"license": "MIT",
+	"main": "./dist/index.js",
+	"scripts": {
+		"build": "vite build"
+	},
+	"devDependencies": {
+		"vsce": "^1.87.0"
+	},
+	"dependencies": {
+		"vscode-tree-sitter": "^0.0.1",
+		"web-tree-sitter": "^0.19.1"
+	},
+	"activationEvents": [
+		"onLanguage:cil"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "cil",
+				"extensions": [
+					".il",
+					".cil",
+					".msil"
+				]
+			}
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/AFatNiBBa/vscode-tree-sitter.git"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"engines": {
+		"vscode": "^1.100.0"
+	}
+}

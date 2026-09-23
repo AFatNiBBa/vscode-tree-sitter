@@ -1,7 +1,7 @@
 {
   "name": "vscode-tree-sitter",
   "version": "0.0.1",
-  "description": "Tree-sitter language highlighting library for VSCode",
+  "description": "Tree-sitter language highlighting library for VS Code",
   "author": "AFatNiBBa",
   "license": "ISC",
   "types": "./dist/index.d.ts",

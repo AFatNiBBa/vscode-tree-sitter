@@ -1,0 +1,12 @@
+
+# Esclusi
+*.ts
+*.tsx
+*.mts
+*.ppath
+*.css
+*.scss
+tsconfig.json
+
+# Inclusi
+!*.d.ts

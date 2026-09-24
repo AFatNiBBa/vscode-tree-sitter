@@ -13,16 +13,11 @@ import * as vscode from "vscode";
 // TODO: https://github.com/microsoft/vscode-extension-samples/blob/main/semantic-tokens-sample/src/extension.ts
 
 export async function activate(ctx: vscode.ExtensionContext) {
-  vscode.window.showInformationMessage("Unga");
-
   await ts.Parser.init({
     locateFile(file: string, from: string) {
-      // debugger
-      return `${from}/${file}`;
+      return `${from}/${file}`; // TODO: Cerca di evitare
     }
-  }); // TODO: Non prosegue
-
-  vscode.window.showInformationMessage("Bunga");
+  });
 
   const parser = new ts.Parser();
 

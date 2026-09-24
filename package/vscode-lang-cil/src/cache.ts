@@ -1,5 +1,5 @@
 
-import Parser from "web-tree-sitter";
+import { Parser } from "web-tree-sitter";
 import * as ts from "web-tree-sitter";
 import * as vscode from "vscode";
 
@@ -14,7 +14,7 @@ export class FileAstCache {
     const { cache } = this;
     const file = doc.uri.toString();
     var tree = cache.get(file);
-    if (!tree) cache.set(file, tree = this.parser.parse(doc.getText()));
+    if (!tree) cache.set(file, tree = this.parser.parse(doc.getText())!);
     return tree;
   }
 
@@ -25,7 +25,7 @@ export class FileAstCache {
     if (!tree) return;
     for (const elm of changes.toSorted((a, b) => b.rangeOffset - a.rangeOffset))
       tree.edit(fromChangeToEdit(elm));
-    cache.set(file, this.parser.parse(doc.getText(), tree));
+    cache.set(file, this.parser.parse(doc.getText(), tree)!);
   }
 
   remove(doc: vscode.TextDocument) {
@@ -36,7 +36,7 @@ export class FileAstCache {
 function fromChangeToEdit(change: vscode.TextDocumentContentChangeEvent): ts.Edit {
   const start = fromPositionToPoint(change.range.start);
   const lines = change.text.split("\n");
-  return {
+  return new ts.Edit({
     startIndex: change.rangeOffset,
     oldEndIndex: change.rangeOffset + change.rangeLength,
     newEndIndex: change.rangeOffset + change.text.length,
@@ -46,7 +46,7 @@ function fromChangeToEdit(change: vscode.TextDocumentContentChangeEvent): ts.Edi
       row: start.row + lines.length - 1,
       column: lines[lines.length - 1].length + (lines.length === 1 ? start.column : 0),
     }
-  };
+  });
 }
 
 function fromPositionToPoint(position: vscode.Position): ts.Point {

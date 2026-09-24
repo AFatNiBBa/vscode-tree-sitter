@@ -15,9 +15,9 @@
 
 (part_keyword) @keyword.control
 
-(part_keyword ".method") @keyword.function
+; (part_keyword ".method") @keyword.function
 
-(part_keyword (".locals" "init")) @keyword.storage.type
+; (part_keyword (".locals" "init")) @keyword.storage.type
 
 (type_intrinsic) @type.builtin
 
@@ -27,7 +27,7 @@
   (id
     (symbol) @type))
 
-(id_member) @variable.other.member
+; (id_member) @variable.other.member
 
 (id_method
   [

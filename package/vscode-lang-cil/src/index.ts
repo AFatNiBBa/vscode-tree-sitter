@@ -1,10 +1,10 @@
 
 import highlight from "../assets/highlights.scm?raw";
 
-import Parser from "web-tree-sitter";
 import { CilSemanticTokenProvider } from "./provider";
 import { FileAstCache } from "./cache";
 import { LEGEND } from "./legend";
+import * as ts from "web-tree-sitter";
 import * as vscode from "vscode";
 
 // TODO: https://vshaxe.github.io/vscode-extern/vscode/DocumentSemanticTokensProvider.html >> "provideDocumentSemanticTokensEdits"?
@@ -15,17 +15,22 @@ import * as vscode from "vscode";
 export async function activate(ctx: vscode.ExtensionContext) {
   vscode.window.showInformationMessage("Unga");
 
-  await Parser.init(); // TODO: Non prosegue
+  await ts.Parser.init({
+    locateFile(file: string, from: string) {
+      // debugger
+      return `${from}/${file}`;
+    }
+  }); // TODO: Non prosegue
 
   vscode.window.showInformationMessage("Bunga");
 
-  const parser = new Parser();
+  const parser = new ts.Parser();
   const wasm = import.meta.resolve("../assets/tree-sitter-cil.wasm"); // Relativo a "dist"
 
-  const lang = await Parser.Language.load(wasm);
+  const lang = await ts.Language.load(wasm);
   parser.setLanguage(lang);
   const cache = new FileAstCache(parser);
-  const query = lang.query(highlight);
+  const query = new ts.Query(lang, highlight);
   const provider = new CilSemanticTokenProvider(cache, query);
   const sub = ctx.subscriptions;
 

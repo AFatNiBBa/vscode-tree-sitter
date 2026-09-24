@@ -13,6 +13,10 @@
     "strict": true,
 
     // Extra
-    "isolatedModules": true
+    "isolatedModules": true,
+
+    "types": [
+      "vite/client"
+    ]
   }
 }

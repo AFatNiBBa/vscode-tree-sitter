@@ -1,7 +1,7 @@
 
 import * as vscode from "vscode";
 
-const TOKEN_TYPES = [
+export const TOKEN_TYPES = [
   "namespace",
   "class",
   "enum",
@@ -27,7 +27,7 @@ const TOKEN_TYPES = [
   "operator",
 ];
 
-const TOKEN_MODIFIERS = [
+export const TOKEN_MODIFIERS = [
   "declaration",
   "definition",
   "readonly",

@@ -6,12 +6,15 @@ export default defineConfig({
     minify: false,
     target: "ESNext",
     rollupOptions: {
-      external: [ "vscode" ]
+      external: [ "fs", "path", "vscode" ]
     },
     lib: {
       entry: "src/index.ts",
       formats: [ "cjs" ],
       fileName: "index"
     }
+  },
+  define: {
+    "import.meta.resolve": "require.resolve"
   }
 });

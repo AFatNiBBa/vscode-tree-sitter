@@ -25,10 +25,11 @@ export async function activate(ctx: vscode.ExtensionContext) {
   vscode.window.showInformationMessage("Bunga");
 
   const parser = new ts.Parser();
-  const wasm = import.meta.resolve("../assets/tree-sitter-cil.wasm"); // Relativo a "dist"
 
+  const wasm = import.meta.resolve("../assets/tree-sitter-cil.wasm"); // Relativo a "dist"
   const lang = await ts.Language.load(wasm);
   parser.setLanguage(lang);
+
   const cache = new FileAstCache(parser);
   const query = new ts.Query(lang, highlight);
   const provider = new CilSemanticTokenProvider(cache, query);

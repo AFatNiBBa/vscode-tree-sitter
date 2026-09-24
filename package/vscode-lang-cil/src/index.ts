@@ -26,8 +26,8 @@ export async function activate(ctx: vscode.ExtensionContext) {
 
   const parser = new ts.Parser();
 
-  const wasm = import.meta.resolve("../assets/tree-sitter-cil.wasm"); // Relativo a "dist"
-  const lang = await ts.Language.load(wasm);
+  const wasm = vscode.Uri.joinPath(ctx.extensionUri, "assets/tree-sitter-cil.wasm");
+  const lang = await ts.Language.load(new URL(wasm.toString()));
   parser.setLanguage(lang);
 
   const cache = new FileAstCache(parser);

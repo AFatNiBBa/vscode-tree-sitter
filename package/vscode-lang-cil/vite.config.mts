@@ -6,7 +6,7 @@ export default defineConfig({
     minify: false,
     target: "ESNext",
     rollupOptions: {
-      external: [ "fs", "path", "vscode", "module" ]
+      external: [ "fs/promises", "module", "vscode" ]
     },
     lib: {
       entry: "src/index.ts",

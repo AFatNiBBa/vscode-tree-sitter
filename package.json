@@ -4,7 +4,8 @@
     "package/*"
   ],
   "scripts": {
-    "build": "npm run build -w package/vscode-tree-sitter",
+    "build": "npm run build -w package/vscode-tree-sitter && npm run build -w package/vscode-lang-cil",
+		"watch": "npm run watch -w package/vscode-lang-cil",
     "clean": "git clean -Xdf"
   },
   "devDependencies": {

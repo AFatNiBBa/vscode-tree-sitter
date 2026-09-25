@@ -14,9 +14,7 @@ import * as vscode from "vscode";
 
 export async function activate(ctx: vscode.ExtensionContext) {
   await ts.Parser.init({
-    locateFile(file: string, from: string) {
-      return `${from}/${file}`; // TODO: Cerca di evitare
-    }
+    locateFile: (file: string, from: string) => `${from}/${file}` // TODO: Cerca di evitare
   });
 
   const path = vscode.Uri.joinPath(ctx.extensionUri, "assets/tree-sitter-cil.wasm");

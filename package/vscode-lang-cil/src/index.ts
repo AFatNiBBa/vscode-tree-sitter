@@ -19,11 +19,11 @@ export async function activate(ctx: vscode.ExtensionContext) {
     }
   });
 
-  const parser = new ts.Parser();
-
   const path = vscode.Uri.joinPath(ctx.extensionUri, "assets/tree-sitter-cil.wasm");
   const wasm = await vscode.workspace.fs.readFile(path);
   const lang = await ts.Language.load(wasm);
+  
+  const parser = new ts.Parser();
   parser.setLanguage(lang);
 
   const cache = new FileAstCache(parser);

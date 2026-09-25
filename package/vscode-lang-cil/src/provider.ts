@@ -6,7 +6,6 @@ import * as vscode from "vscode";
 
 // TODO: Fold!
 // TODO: Injection!
-// TODO: Serve "onLanguage:cil"? > (Sul "package.json")
 
 const SEMANTIC_TOKEN_TYPE_MAPPINGS: Record<string, { type: string; modifiers?: string[] }> = {
   "string": { type: "string" }

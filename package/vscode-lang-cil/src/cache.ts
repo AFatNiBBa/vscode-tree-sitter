@@ -3,8 +3,6 @@ import { Parser } from "web-tree-sitter";
 import * as ts from "web-tree-sitter";
 import * as vscode from "vscode";
 
-// TODO: "tree-sitter.wasm" non viene riportato quando buildi
-
 export class FileAstCache {
   constructor(public parser: Parser) { }
 

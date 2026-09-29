@@ -1,5 +1,5 @@
 
-import highlight from "../assets/highlights.scm?raw";
+import highlight from "@seanalunni/tree-sitter-cil/queries/highlights.scm?raw";
 
 import { CilSemanticTokenProvider } from "./provider";
 import { FileAstCache } from "./cache";
@@ -17,7 +17,7 @@ export async function activate(ctx: vscode.ExtensionContext) {
     locateFile: (file: string, from: string) => `${from}/${file}` // TODO: Cerca di evitare
   });
 
-  const path = vscode.Uri.joinPath(ctx.extensionUri, "assets/tree-sitter-cil.wasm");
+  const path = vscode.Uri.joinPath(ctx.extensionUri, "dist/tree-sitter-cil.wasm");
   const wasm = await vscode.workspace.fs.readFile(path);
   const lang = await ts.Language.load(wasm);
   

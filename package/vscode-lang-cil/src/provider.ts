@@ -8,7 +8,7 @@ import * as vscode from "vscode";
 // TODO: Injection!
 
 const SEMANTIC_TOKEN_TYPE_MAPPINGS: Record<string, { type: string; modifiers?: string[] }> = {
-  "string": { type: "string" }
+  // TODO: Gestisci con lambda
 };
 
 export class CilSemanticTokenProvider implements vscode.DocumentSemanticTokensProvider {
@@ -211,7 +211,7 @@ function addPosition(range: vscode.Range, pos: vscode.Position): vscode.Range {
 function parseCaptureName(name: string): { type: string; modifiers: string[] } {
   const modifiers = name.split(".");
   if (!modifiers.length) throw new Error("Capture name is empty");
-  return { type: modifiers.pop()!, modifiers };
+  return { type: modifiers.shift()!, modifiers };
 }
 
 interface Token {

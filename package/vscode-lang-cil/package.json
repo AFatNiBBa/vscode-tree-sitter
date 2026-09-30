@@ -32,6 +32,20 @@
 					".msil"
 				]
 			}
+		],
+		"semanticTokenModifiers": [
+			{
+				"id": "escape",
+				"description": "Escape sequence in a string"
+			}
+		],
+		"semanticTokenScopes": [
+			{
+				"language": "cil",
+				"scopes": {
+					"string.escape": [ "constant.character.escape" ]
+				}
+			}
 		]
 	},
 	"repository": {

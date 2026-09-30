@@ -1,6 +1,8 @@
 
 import * as vscode from "vscode";
 
+// TODO: Metti SOLO quelli che mi servono e TUTTI quelli che mi servono
+
 export const TOKEN_TYPES = [
   "namespace",
   "class",
@@ -38,6 +40,8 @@ export const TOKEN_MODIFIERS = [
   "modification",
   "documentation",
   "defaultLibrary",
+
+  "escape" // Custom
 ];
 
 export const LEGEND = new vscode.SemanticTokensLegend(TOKEN_TYPES, TOKEN_MODIFIERS);

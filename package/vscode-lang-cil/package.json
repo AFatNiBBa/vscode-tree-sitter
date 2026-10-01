@@ -6,6 +6,7 @@
 	"publisher": "AFatNiBBa",
 	"license": "MIT",
 	"main": "./dist/index.mjs",
+	"icon": "img/logo.png",
 	"scripts": {
 		"build": "vite build",
 		"watch": "npm run build -- --watch",
@@ -15,7 +16,7 @@
 		"vsce": "^1.87.0"
 	},
 	"dependencies": {
-		"@seanalunni/tree-sitter-cil": "^1.1.0",
+		"@seanalunni/tree-sitter-cil": "^1.2.0",
 		"vscode-tree-sitter": "^0.0.1",
 		"web-tree-sitter": "^0.27.0"
 	},

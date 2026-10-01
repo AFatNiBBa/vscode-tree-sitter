@@ -5,8 +5,10 @@
 			"name": "Run Extension",
 			"type": "extensionHost",
 			"request": "launch",
-			"args": [ "--extensionDevelopmentPath=${workspaceFolder}/package/vscode-lang-cil" ],
-			"port": 9229 // On my home PC, it never manages to start on VS Code, so I'm doing this so I can debug it from Chromium DevTools, which are way better anyway
+			"port": 9229, // On my home PC, it never manages to start on VS Code, so I'm doing this so I can debug it from Chromium DevTools, which are way better anyway
+			"args": [
+				"--extensionDevelopmentPath=${workspaceFolder}/package/vscode-lang-cil"
+			]
 		}
 	]
 }

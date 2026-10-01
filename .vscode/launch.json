@@ -4,10 +4,12 @@
 		{
 			"name": "Run Extension",
 			"type": "extensionHost",
+			"debugWebWorkerHost": true,
 			"request": "launch",
 			"port": 9229, // On my home PC, it never manages to start on VS Code, so I'm doing this so I can debug it from Chromium DevTools, which are way better anyway
 			"args": [
-				"--extensionDevelopmentPath=${workspaceFolder}/package/vscode-lang-cil"
+				"--extensionDevelopmentPath=${workspaceFolder}/package/vscode-lang-cil",
+				"--extensionDevelopmentKind=web"
 			]
 		}
 	]

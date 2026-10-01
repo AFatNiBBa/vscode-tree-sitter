@@ -5,7 +5,7 @@
 	"displayName": "Common Intermediate Language",
 	"publisher": "AFatNiBBa",
 	"license": "MIT",
-	"main": "./dist/index.mjs",
+	"browser": "./dist/index.js",
 	"icon": "img/logo.png",
 	"scripts": {
 		"build": "vite build",

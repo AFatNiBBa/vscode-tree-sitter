@@ -1,6 +1,6 @@
 {
 	"name": "vscode-lang-cil",
-	"version": "0.0.1",
+	"version": "0.2.0",
 	"description": "Rich syntax highlighting for .NET's Common Intermediate Language",
 	"displayName": "Common Intermediate Language",
 	"publisher": "AFatNiBBa",
@@ -10,7 +10,7 @@
 	"scripts": {
 		"build": "vite build",
 		"watch": "npm run build -- --watch",
-		"vsix": "vsce package --no-dependencies"
+		"vsix": "npm run build && vsce package --no-dependencies"
 	},
 	"devDependencies": {
 		"vsce": "^1.87.0"

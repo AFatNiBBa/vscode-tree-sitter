@@ -3,4 +3,4 @@
 
 Rich (But still incomplete) syntax highlighting for .NET's Common Intermediate Language
 
-![Demo](./img/demo.png)
+![Demo](https://raw.githubusercontent.com/AFatNiBBa/vscode-tree-sitter/temp/package/vscode-lang-cil/img/demo.png)
